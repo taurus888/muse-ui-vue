@@ -4,7 +4,6 @@
         <!--label-position 可选值：left top right-->
         <div class="add-title">
             <mu-form ref="form" :model="form" class="mu-demo-form" label-position="left">
-
                 <mu-form-item prop="shopName" label="店铺名称" :rules="usernameRules">
                     <mu-text-field v-model="form.shopName"></mu-text-field>
                 </mu-form-item>

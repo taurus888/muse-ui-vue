@@ -6,8 +6,12 @@
             <img class="main-img" src="../assets/image/b2.jpg" alt="">
         </div>
         <div>
-            <mu-button class="home-btn" to="/title_list" :round="true" color="#42a5f5">添加抬头</mu-button>
-            <mu-button class="home-btn" to="/title_list" :round="true" color="#64b5f6">抬头管理</mu-button>
+            <mu-button class="home-btn" to="/title_list" :round="true" color="#42a5f5">
+                <mu-icon value="add"></mu-icon>添加抬头
+            </mu-button>
+            <mu-button class="home-btn" to="/title_list" :round="true" color="#64b5f6">
+                <mu-icon value="bubble_chart"></mu-icon>抬头管理
+            </mu-button>
         </div>
     </div>
 </template>

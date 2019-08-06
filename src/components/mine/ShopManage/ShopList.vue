@@ -15,7 +15,7 @@
                 <img style="width: 26px" src="../../../assets/image/add.png" alt="">
             </div>
         </header>
-
+        <!--商铺列表-->
         <div class="firm-list">
             <div class="demo-list-wrap">
                 <mu-container>
@@ -31,7 +31,7 @@
                                 <mu-list-item button @click="checkInfo(item.id)">
                                     <mu-list-item-title>查看</mu-list-item-title>
                                 </mu-list-item>
-                                <mu-list-item button>
+                                <mu-list-item button @click="editHandle(item.id)">
                                     <mu-list-item-title>编辑</mu-list-item-title>
                                 </mu-list-item>
                                 <mu-list-item button @click="deleteItem(item.id)">
@@ -39,7 +39,6 @@
                                 </mu-list-item>
                             </mu-list>
                         </mu-menu>
-                        <!--<mu-button slot="action" :ripple="false" flat>查看</mu-button>-->
                         <mu-button slot="action" :ripple="false" flat>预售码绑定</mu-button>
                         <mu-button slot="action" :ripple="false" flat color="primary">明细管理</mu-button>
                     </mu-expansion-panel>
@@ -94,6 +93,12 @@
 
             addTitle(){
                 this.$router.push('/shop_list/add_shop');
+            },
+            /**
+             * 编辑商铺
+             */
+            editHandle(id){
+                this.$router.push({path: `/shop_edit/${id}`})
             },
             /**
              * 跳转到商铺详情页，所传参数为item.id

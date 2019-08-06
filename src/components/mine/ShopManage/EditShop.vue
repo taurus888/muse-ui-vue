@@ -62,6 +62,18 @@
                 ],
             }
         },
+        mounted(){
+            this.form = {
+                shopName: '哈哈镜',
+                name: '北京哈哈镜餐饮有限公司',
+                taxNum: '8622845312560021',
+                address: '招商银行北三环支行12号',
+                tel: '68373081',
+                detail: '餐饮',
+                auth_code: '8MDKEID',
+                invite_num: '111111',
+            }
+        },
         methods:{
             submit () {
                 this.$refs.form.validate().then((result) => {

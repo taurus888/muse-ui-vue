@@ -37,7 +37,7 @@ export default new Router({
       component: () => import('./components/mine/TitleManage/TitleList.vue'),
     },
     {
-      path: '/home/title_list/add_title',
+      path: '/title_list/add_title',
       name: 'add-title',
       meta: '添加抬头',
       component: () => import('./components/mine/TitleManage/AddTitle.vue'),
@@ -53,6 +53,12 @@ export default new Router({
       name: 'title-detail',
       meta: '抬头详细',
       component: () => import('./components/mine/TitleManage/TitleDetail.vue'),
+    },
+    {
+      path: '/title_list/title_edit/:id',
+      name: 'title-edit',
+      meta: '编辑抬头',
+      component: () => import('./components/mine/TitleManage/DditTitle.vue'),
     },
     {
       path: '/shop_list',
@@ -71,6 +77,12 @@ export default new Router({
       name: 'shop-detail',
       meta: '商铺详情',
       component: () => import('./components/mine/ShopManage/ShopDetail.vue'),
+    },
+    {
+      path: '/shop_edit/:id',
+      name: 'shop-edit',
+      meta: '商铺详情',
+      component: () => import('./components/mine/ShopManage/EditShop.vue'),
     },
   ]
 })

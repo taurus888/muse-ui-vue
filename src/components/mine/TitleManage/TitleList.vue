@@ -29,7 +29,7 @@
                         </mu-list-item-action>
                         <mu-list-item button :ripple="false" slot="nested">
                             <mu-list-item-title><mu-button :ripple="false" flat @click="deleteItem(item.id)">删除</mu-button></mu-list-item-title>
-                            <mu-list-item-title><mu-button :ripple="false" flat>编辑</mu-button></mu-list-item-title>
+                            <mu-list-item-title><mu-button :ripple="false" flat @click="editItem(item.id)">编辑</mu-button></mu-list-item-title>
                             <mu-list-item-title><mu-button :ripple="false" flat @click="checkInfo(item.id)" color="primary">查看</mu-button></mu-list-item-title>
                         </mu-list-item>
                     </mu-list-item>
@@ -96,7 +96,13 @@
                 }
             },
             addTitle(){
-                this.$router.push('/home/title_list/add_title');
+                this.$router.push('/title_list/add_title');
+            },
+            /**
+             * 编辑抬头
+             */
+            editItem(id){
+                this.$router.push(`/title_list/title_edit/${id}`);
             },
             /**
              * 删除提示：
