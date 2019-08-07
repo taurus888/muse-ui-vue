@@ -35,10 +35,13 @@
                 </div>
             </div>
             <div class="wx-code-info">
-                <div v-show="false" class="personal"><span>姓名</span>&#12288;安吉拉</div>
-                <img class="wx-code" src="../../../assets/image/wxma.jpg" alt="二维码">
-                <div>扫描二维码，获取开票信息</div>
-                <div>查询详情ID:  {{$route.params.id}}</div>
+                <mu-paper class="demo-paper" :z-depth="2">
+                    <div v-show="false" class="personal"><span>姓名</span>&#12288;安吉拉</div>
+                    <img class="wx-code" src="../../../assets/image/wxma.jpg" alt="二维码">
+                    <div>扫描二维码，获取开票信息</div>
+                    <!--<div>查询详情ID:  {{$route.params.id}}</div>-->
+                </mu-paper>
+
             </div>
         </div>
     </div>

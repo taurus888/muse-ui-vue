@@ -8,7 +8,7 @@
             :rightShow = 'rightShow'
             @on-click-more="more"
             @on-click-back="back"
-            style="background-color:#bbdefb; color: #fff; height:60px; line-height: 60px;position: fixed;top: 0;width: 100%;z-index: 2">
+            style="background-color:#bbdefb; color: #fff; height:56px; line-height: 56px;position: fixed;top: 0;width: 100%;z-index: 2">
       <a slot="back-icon" class="backBtn">
         <mu-icon value="navigate_before" size="34"></mu-icon>
       </a>
