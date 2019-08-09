@@ -15,27 +15,27 @@
                     <mu-radio v-model="form.radio" value="1" label="个人"></mu-radio>
                 </mu-form-item>
                 <div v-if="form.radio==0">
-                    <mu-form-item prop="name" label="抬头名称" :rules="usernameRules">
-                        <mu-text-field v-model="form.name"></mu-text-field>
+                    <mu-form-item prop="name" class="main-param" label="抬头名称" :rules="usernameRules">
+                        <mu-text-field v-model="form.name" placeholder="请输入抬头名称"></mu-text-field>
                     </mu-form-item>
                     <mu-form-item prop="number" label="纳税人识别号">
-                        <mu-text-field v-model="form.number"></mu-text-field>
+                        <mu-text-field v-model="form.number" placeholder="请输入纳税人识别号"></mu-text-field>
                     </mu-form-item>
                     <mu-form-item prop="address" label="单位地址">
-                        <mu-text-field v-model="form.address"></mu-text-field>
+                        <mu-text-field v-model="form.address" placeholder="请输入单位地址"></mu-text-field>
                     </mu-form-item>
                     <mu-form-item prop="phone" label="电话号码">
-                        <mu-text-field v-model="form.phone"></mu-text-field>
+                        <mu-text-field v-model="form.phone" placeholder="请输入电话号码"></mu-text-field>
                     </mu-form-item>
                     <mu-form-item prop="bank" label="开户银行">
-                        <mu-text-field v-model="form.bank"></mu-text-field>
+                        <mu-text-field v-model="form.bank" placeholder="请输入开户银行"></mu-text-field>
                     </mu-form-item>
                     <mu-form-item prop="bank_num" label="银行账户">
-                        <mu-text-field v-model="form.bank_num"></mu-text-field>
+                        <mu-text-field v-model="form.bank_num" placeholder="请输入银行账户"></mu-text-field>
                     </mu-form-item>
                 </div>
                 <div v-if="form.radio==1">
-                    <mu-form-item prop="namePerson" label="抬头名称" :rules="usernameRules">
+                    <mu-form-item prop="namePerson" class="main-param" label="抬头名称" :rules="usernameRules">
                         <mu-text-field v-model="form.namePerson"></mu-text-field>
                     </mu-form-item>
                     <mu-form-item prop="IDCard" label="身份证号码">

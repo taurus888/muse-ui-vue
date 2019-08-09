@@ -8,7 +8,7 @@
             :rightShow = 'rightShow'
             @on-click-more="more"
             @on-click-back="back"
-            style="background-color:#bbdefb; color: #fff; height:56px; line-height: 56px;position: fixed;top: 0;width: 100%;z-index: 2">
+            style="background-color:#bbdefb;box-shadow: 0 2px 8px #cfd8dc; color: #fff; height:56px; line-height: 56px;position: fixed;top: 0;width: 100%;z-index: 2">
       <a slot="back-icon" class="backBtn">
         <mu-icon value="navigate_before" size="34"></mu-icon>
       </a>
@@ -39,6 +39,7 @@
         isShowNavBar: true,//是否展示顶部bar
         isShowFooter: true,//是否展示底部tab
         activeMenu: 'home',
+        isActive: true,
       };
     },
     created(){
@@ -53,6 +54,8 @@
       console.log(activeState)
       if(activeState!=''){
         this.activeMenu = activeState;
+      }else{
+        this.activeMenu = 'home';
       };
       sessionStorage.clear();
     },
@@ -140,4 +143,9 @@
   .main-content
     position relative
     margin-top 70px
+  /*必填参数*/
+  .main-param::before
+    content '* '
+    color red
+    line-height 32px
 </style>

@@ -1,0 +1,77 @@
+.firm-list
+  margin 0 auto
+  color #333!important
+header
+  width 100%
+  padding 0 10px 10px
+  border-bottom 1px solid #f4f4f4
+  display flex
+  .searchInput
+    width 90%
+.demo-list-wrap
+  width 100%
+  background-color #ffffff
+  overflow hidden
+.list-item
+  position relative
+  height 80px
+  -webkit-transition all 0.2s
+  transition all 0.2s
+  &::after
+    content " "
+    position absolute
+    left 10px
+    bottom 0
+    right 0
+    height 1px
+    border-bottom 1px solid #ccc
+    color #ccc
+    -webkit-transform-origin 0 100%
+    transform-origin 0 100%
+    -webkit-transform scaleY(0.5)
+    transform scaleY(0.5)
+    z-index 2
+  .list-box
+    padding 0 16px
+    display flex
+    align-items center
+    -webkit-box-sizing border-box
+    box-sizing border-box
+    position absolute
+    top 0
+    right 0
+    bottom 0
+    left 0
+    .list-content
+      padding-left 20px
+      position relative
+      flex-direction column
+      justify-content center
+      overflow hidden
+      .title
+        display block
+        color #333
+        overflow hidden
+        font-size 16px
+        text-overflow ellipsis
+        white-space nowrap
+  .delete
+    width 140px
+    height 80px
+    background-color #f44336
+    font-size 16px
+    color #fff
+    text-align center
+    line-height 80px
+    position absolute
+    top 0
+    right -140px
+    display flex
+    div
+      flex-grow 1
+      &:first-child
+        background-color #4caf50
+.list-item[data-type="0"]
+  transform translate3d(0,0,0)
+.list-item[data-type="1"]
+  transform translate3d(-140px,0,0)

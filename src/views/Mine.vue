@@ -28,7 +28,7 @@
                     </mu-list-item-action>
                     <mu-list-item-title>店铺管理</mu-list-item-title>
                 </mu-list-item>
-                <mu-list-item button :ripple="false">
+                <mu-list-item button :ripple="false" to="/mine/collect">
                     <mu-list-item-action>
                         <mu-icon value="grade"></mu-icon>
                     </mu-list-item-action>

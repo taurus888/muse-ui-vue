@@ -1,5 +1,4 @@
 <template>
-    <!--tab发现页面-->
     <div class="main-content find">
         <mu-container style="margin: 10px 0" v-for="(item,index) in findList">
             <mu-card style="width: 100%; margin: 0 auto;">
@@ -55,15 +54,12 @@
                 </mu-list>
             </mu-bottom-sheet>
         </mu-container>
-
-        <!--回到顶部-->
-        <nut-backtop :distance="200" :bottom="80"></nut-backtop>
     </div>
 </template>
 
 <script>
     export default {
-        name: "Find",
+        name: "CollectedNews",
         data(){
             return{
                 findList:[
@@ -72,27 +68,17 @@
                         dateTime: '2019-12-6',
                         title: '花开四季',
                         subTitle: '李之恋',
-                        headImg: require('../assets/image/1.jpg'),
+                        headImg: require('../../assets/image/1.jpg'),
                         text: '散落在指尖的阳光，我试着轻轻抓住光影的踪迹，它却在眉宇间投下一片淡淡的阴影。调皮的阳光掀动了四月的心帘，温暖如约的歌声渐起。',
                         isLike: true,
                         isPraise: false,
-                    },
-                    {
-                        nickName: '李现',
-                        dateTime: '2019-2-26',
-                        title: '花开四季',
-                        subTitle: '李之恋',
-                        headImg: require('../assets/image/flower.jpg'),
-                        text: '散落在指尖的阳光，调皮的阳光掀动了四月的心帘，温暖如约的歌声渐起。',
-                        isLike: false,
-                        isPraise: true,
                     },
                     {
                         nickName: '杨紫',
                         dateTime: '2019-10-18',
                         title: '花开四季',
                         subTitle: '李之恋',
-                        headImg: require('../assets/image/mine.jpg'),
+                        headImg: require('../../assets/image/mine.jpg'),
                         text: '调皮的阳光掀动了四月的心帘，温暖如约的歌声渐起。',
                         isLike: true,
                         isPraise: true,

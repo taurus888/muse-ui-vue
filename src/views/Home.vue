@@ -18,17 +18,17 @@
                     <mu-row gutter>
                         <mu-col span="4">
                             <div class="grid-cell">
-                                <img class="index-center-img" src="../assets/image/index/index_03.png" alt="">
+                                <img class="index-center-img" src="../assets/image/index/11.jpg" alt="">
                             </div>
                         </mu-col>
                         <mu-col span="4">
                             <div class="grid-cell">
-                                <img class="index-center-img" src="../assets/image/index/index_07.png" alt="">
+                                <img class="index-center-img" src="../assets/image/index/13.jpg" alt="">
                             </div>
                         </mu-col>
                         <mu-col span="4">
                             <div class="grid-cell">
-                                <img class="index-center-img" src="../assets/image/index/index_09.png" alt="">
+                                <img class="index-center-img" src="../assets/image/index/12.jpg" alt="">
                             </div>
                         </mu-col>
                     </mu-row>
@@ -36,11 +36,11 @@
             </div>
             <h3 style="margin: 0;padding-left: 14px;padding-top: 6px"><mu-icon right value="send" size="16"></mu-icon> 最新资讯</h3>
             <div class="index-news">
-                <div class="bbb" v-for="item in newsList">
-                    <div class="flex-item-bbb">
+                <div class="newsList" v-for="item in newsList">
+                    <div class="flex-item-newsList">
                         <img :src="item.image" alt="">
                     </div>
-                    <div class="flex-item-bbb text">
+                    <div class="flex-item-newsList text">
                         <!--<h4>{{item.title}}</h4>-->
                         <p>{{item.text}}</p>
                         <p style="color: #666666;position: absolute;bottom: 10px;">{{item.date}}</p>
@@ -152,7 +152,7 @@
             margin-left 50px
     .index-news
         margin 6px 0 100px
-        .bbb
+        .newsList
             background-color #ffffff
             box-shadow 0 4px 8px #cfd8dc
             width 94%
@@ -161,7 +161,7 @@
             margin 0 auto
             margin-bottom 14px
             display flex
-            .flex-item-bbb
+            .flex-item-newsList
                 flex-grow 1
                 padding 10px
                 img
@@ -174,5 +174,6 @@
         width 100%
         height 140px
         box-shadow 0 4px 8px #b0bec5
+        border-radius 6px
 
 </style>

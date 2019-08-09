@@ -4,7 +4,7 @@
         <div class="add-title">
             <mu-form ref="form" :model="form" class="mu-demo-form" label-position="left" label-width="110">
                 <div v-if="form.radio==0">
-                    <mu-form-item prop="name" label="抬头名称" :rules="usernameRules">
+                    <mu-form-item prop="name" class="main-param" label="抬头名称" :rules="usernameRules">
                         <mu-text-field v-model="form.name"></mu-text-field>
                     </mu-form-item>
                     <mu-form-item prop="number" label="纳税人识别号">
@@ -24,7 +24,7 @@
                     </mu-form-item>
                 </div>
                 <div v-if="form.radio==1">
-                    <mu-form-item prop="namePerson" label="抬头名称" :rules="usernameRules">
+                    <mu-form-item prop="namePerson" class="main-param" label="抬头名称" :rules="usernameRules">
                         <mu-text-field v-model="form.namePerson"></mu-text-field>
                     </mu-form-item>
                     <mu-form-item prop="IDCard" label="身份证号码">

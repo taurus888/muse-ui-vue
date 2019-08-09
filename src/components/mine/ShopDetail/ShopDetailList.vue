@@ -1,5 +1,5 @@
 <template>
-    <!--抬头列表页-->
+    <!--商品明细列表页-->
     <div class="main-content">
         <header>
             <div class="searchInput">
@@ -15,29 +15,39 @@
                 <img style="width: 26px" src="../../../assets/image/add.png" alt="">
             </div>
         </header>
-
+        <!--商铺列表-->
         <div class="firm-list">
             <ul class="demo-list-wrap">
-                <li class="list-item " v-for="(item,index) in firmList " :data-type="activeSwiper == index ? 1 : 0">
+                <li class="list-item " v-for="(item,index) in shopList " :data-type="activeSwiper == index ? 1 : 0">
                     <div class="list-box"
                          @touchstart.capture="touchStart"
                          :data-index="index"
                          @touchend.capture="touchEnd"
                          @click="skip(item.id)">
-                        <mu-avatar color="#bbdefb">
-                            <mu-icon :value="item.type==0?'person':'people'"></mu-icon>
-                        </mu-avatar>
                         <div class="list-content">
-                            <p class="title">{{item.name}}</p>
+                            <p class="title">{{item.name}} {{item.isDefault==1?'（默认）': ''}}</p>
                         </div>
                     </div>
-                    <!--<div class="delete" @click="deleteItem" :data-index="index">删除</div>-->
                     <div class="delete" :data-index="index">
-                        <div @click="editItem(item.id)">编辑</div>
+                        <div @click="editItem(item.id)">设为默认</div>
                         <div @click="deleteItem(item.id,index)">删除</div>
                     </div>
                 </li>
             </ul>
+            <!--<div class="demo-list-wrap">-->
+                <!--<mu-container>-->
+                    <!--<mu-expansion-panel v-for="item in shopList">-->
+                        <!--<div slot="header" class="shop-list-info">-->
+                            <!--<h4>{{item.name}} {{item.isDefault==1?'（默认）': ''}}</h4>-->
+                        <!--</div>-->
+                        <!--<mu-button slot="action" @click="deleteItem(item.id)" :ripple="false" flat>删除</mu-button>-->
+                        <!--<mu-button slot="action" @click="checkInfo(item.id)" :ripple="false" flat>查看</mu-button>-->
+                        <!--<mu-button slot="action" @click="editHandle(item.id)" :ripple="false" flat color="primary">-->
+                            <!--{{item.isDefault==1?'编辑':'设为默认'}}-->
+                        <!--</mu-button>-->
+                    <!--</mu-expansion-panel>-->
+                <!--</mu-container>-->
+            <!--</div>-->
         </div>
 
         <!--回到顶部-->
@@ -47,46 +57,34 @@
 
 <script>
     export default {
-        name: "TitleList",
+        name: "ShopDetailList",
         data(){
             return{
-                firmList:[
+                shopList:[
                     {
                         id: 522145566322215,
-                        name: '刘谦',
-                        imgUrl : require('../../../assets/image/logo.png')  ,
-                        type: 0,//0个人 1公司
-                        isOpen: false,
-                        isDefault: 1,//是否是默认抬头
+                        name: '餐饮',
+                        isDefault: 1,
                     },
                     {
                         id: 522145566323336,
-                        name: '北京哈哈镜餐饮有限公司',
-                        imgUrl : require('../../../assets/image/logo.png')  ,
-                        type: 1,//0个人 1公司
-                        isOpen: false,
+                        name: '服装',
                         isDefault: 0,
                     },
                     {
                         id: 522145566324421,
-                        name: '北京联合美邦教育有限公司',
-                        imgUrl : require('../../../assets/image/logo.png') ,
-                        type: 1,//0个人 1公司
-                        isOpen: false,
+                        name: '办公用品',
                         isDefault: 0,
                     },
                     {
                         id: 522145566320021,
-                        name: '安吉拉',
-                        imgUrl : require('../../../assets/image/logo.png') ,
-                        type: 0,//0个人
-                        isOpen: false,
+                        name: '礼品',
                         isDefault: 0,
                     },
 
 
                 ],
-                open: false,
+                //左滑块
                 panel: '',
                 startX : 0,
                 endX : 0,
@@ -97,37 +95,41 @@
 
         },
         methods:{
+
             addTitle(){
-                this.$router.push('/title_list/add_title');
+                this.$router.push('/shop_list/shop_detail_add');
             },
             /**
-             * 编辑抬头
+             * 编辑商铺
              */
-            editItem(id){
-                this.$router.push(`/title_list/title_edit/${id}`);
+            editHandle(id){
+                for(let i=0;i<this.shopList.length;i++){
+                    if(this.shopList[i].id == id){
+                        if(this.shopList[i].isDefault == 0){
+                            this.$confirm(`确定要修改${this.shopList[i].name}为默认？`, '提示信息');
+                        }else{
+                            this.$router.push({path: `/shop_list/shop_detail_edit/${id}`});
+                        }
+                    }
+                }
+                ;
+
             },
             /**
              * 删除提示：
              * 点击确定，发送删除请求，重新请求list，关闭弹框
              * 点击取消，关闭confirm弹框
              */
-            deleteItem(id,index){
+            deleteItem(id){
                 this.$confirm(`确定要删除？${id}`, '删除提示').then(({ result }) => {
                     if (result) {
                         // this.$toast.message('点击了确定');
-                        this.firmList.splice(index,1);
+                        this.shopList.splice(index,1);
                     } else {
                         // this.$toast.message('点击了取消');
                     }
                     this.activeSwiper = -1;
                 });
-            },
-            /**
-             * 跳转到抬头详情页，所传参数为item.id
-             * @param id
-             */
-            checkInfo(id){
-                this.$router.push({path: `/title_detail/${id}`})
             },
             /**
              * 跳转
@@ -138,7 +140,7 @@
                 if( this.checkSlide() ){
                     this.activeSwiper = -1;
                 }else{
-                    this.$router.push(`/title_detail/${id}`)
+                    this.$router.push(`/shop_list/shop_detail/${id}`)
                 }
             },
             //滑动开始
@@ -170,7 +172,6 @@
 
 <style scoped lang="stylus">
     @import "../../../assets/css/titleList.styl";
-
 
 
 </style>

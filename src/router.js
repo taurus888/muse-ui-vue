@@ -31,6 +31,12 @@ export default new Router({
       component: () => import('./views/Mine.vue'),
     },
     {
+      path: '/mine/collect',
+      name: 'mine-collect',
+      meta: '我的收藏',
+      component: () => import('./components/mine/CollectedNews.vue'),
+    },
+    {
       path: '/title_list',
       name: 'title-list',
       meta: '抬头列表',
@@ -81,8 +87,32 @@ export default new Router({
     {
       path: '/shop_edit/:id',
       name: 'shop-edit',
-      meta: '商铺详情',
+      meta: '编辑商铺',
       component: () => import('./components/mine/ShopManage/EditShop.vue'),
+    },
+    {
+      path: '/shop_list/shop_detail_list',
+      name: 'shop-detail-list',
+      meta: '商品明细列表',
+      component: () => import('./components/mine/ShopDetail/ShopDetailList.vue'),
+    },
+    {
+      path: '/shop_list/shop_detail_add',
+      name: 'shop-detail-add',
+      meta: '添加商铺明细',
+      component: () => import('./components/mine/ShopDetail/AddShopDetail.vue'),
+    },
+    {
+      path: '/shop_list/shop_detail_edit/:id',
+      name: 'shop-detail-edit',
+      meta: '添加商铺明细',
+      component: () => import('./components/mine/ShopDetail/EditShopDetail.vue'),
+    },
+    {
+      path: '/shop_list/shop_detail/:id',
+      name: 'shop-detail-edit',
+      meta: '商铺明细详情',
+      component: () => import('./components/mine/ShopDetail/ShopDetail.vue'),
     },
   ]
 })

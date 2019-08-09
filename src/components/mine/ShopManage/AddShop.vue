@@ -1,32 +1,32 @@
 <template>
-    <!--添加抬头页面-->
+    <!--添加商铺页面-->
     <div class="main-content">
         <!--label-position 可选值：left top right-->
         <div class="add-title">
             <mu-form ref="form" :model="form" class="mu-demo-form" label-position="left">
-                <mu-form-item prop="shopName" label="店铺名称" :rules="usernameRules">
-                    <mu-text-field v-model="form.shopName"></mu-text-field>
+                <mu-form-item prop="shopName" class="main-param" label="店铺名称" :rules="usernameRules">
+                    <mu-text-field v-model="form.shopName" placeholder="请输入店铺名称"></mu-text-field>
                 </mu-form-item>
-                <mu-form-item prop="name" label="公司名称">
-                    <mu-text-field v-model="form.name"></mu-text-field>
+                <mu-form-item prop="name" class="main-param" label="公司名称">
+                    <mu-text-field v-model="form.name" placeholder="请输入公司名称"></mu-text-field>
                 </mu-form-item>
-                <mu-form-item prop="taxNum" label="公司税号">
-                    <mu-text-field v-model="form.taxNum"></mu-text-field>
+                <mu-form-item prop="taxNum" class="main-param" label="公司税号">
+                    <mu-text-field v-model="form.taxNum" placeholder="请输入公司税号"></mu-text-field>
                 </mu-form-item>
                 <mu-form-item prop="address" label="公司地址">
-                    <mu-text-field v-model="form.address"></mu-text-field>
+                    <mu-text-field v-model="form.address" placeholder="请输入公司地址"></mu-text-field>
                 </mu-form-item>
                 <mu-form-item prop="tel" label="公司电话">
-                    <mu-text-field v-model="form.tel"></mu-text-field>
+                    <mu-text-field v-model="form.tel" placeholder="请输入公司电话"></mu-text-field>
                 </mu-form-item>
-                <mu-form-item prop="detail" label="开票明细">
-                    <mu-text-field v-model="form.detail"></mu-text-field>
+                <mu-form-item prop="detail" class="main-param" label="开票明细">
+                    <mu-text-field v-model="form.detail" placeholder="请输入开票明细"></mu-text-field>
                 </mu-form-item>
-                <mu-form-item prop="auth_code" label="登录授权码">
-                    <mu-text-field v-model="form.auth_code"></mu-text-field>
+                <mu-form-item prop="auth_code" class="main-param" label="登录授权码">
+                    <mu-text-field v-model="form.auth_code" placeholder="请输入登录授权码"></mu-text-field>
                 </mu-form-item>
                 <mu-form-item prop="invite_num" label="邀请码">
-                    <mu-text-field v-model="form.invite_num"></mu-text-field>
+                    <mu-text-field v-model="form.invite_num" placeholder="请输入邀请码"></mu-text-field>
                 </mu-form-item>
                 <div class="form-submit">
                     <mu-button class="form-btn" @click="clear">重置</mu-button>
@@ -90,5 +90,6 @@
 
 <style scoped lang="stylus">
     @import "../../../assets/css/addShop.styl";
+
 
 </style>

@@ -40,7 +40,7 @@
                             </mu-list>
                         </mu-menu>
                         <mu-button slot="action" :ripple="false" flat>预售码绑定</mu-button>
-                        <mu-button slot="action" :ripple="false" flat color="primary">明细管理</mu-button>
+                        <mu-button slot="action" :ripple="false" to="/shop_list/shop_detail_list" flat color="primary">明细管理</mu-button>
                     </mu-expansion-panel>
                 </mu-container>
             </div>
